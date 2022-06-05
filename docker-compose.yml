@@ -1,0 +1,20 @@
+version: '3'
+services:
+  postgres:
+    container_name: opentix-postgres
+    image:  postgres:14-bullseye
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: opentix
+      POSTGRES_PASSWORD: LOCAL_PASS_123
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./db/pg_primary:/var/lib/postgresql/data/pgdata
+  pgadmin4:
+    container_name: opentix-pgadmin4
+    image: chorss/docker-pgadmin4
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./tmp/backups:/backups
