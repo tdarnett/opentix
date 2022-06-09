@@ -4,6 +4,7 @@ backcall==0.2.0
 decorator==5.1.1
 Django==4.0.5
 django-environ==0.8.1
+django-extensions==3.1.5
 executing==0.8.3
 ipython==8.4.0
 jedi==0.18.1
