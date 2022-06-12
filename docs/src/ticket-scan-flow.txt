@@ -1,0 +1,10 @@
+title Ticket Scan Flow
+
+actor Alice
+note over React App
+Alice<-React App:Scan opentix qr code
+React App->Django App: /scan
+Django App->NFT Contract: check token_id owner
+NFT Contract-->Django App:
+Django App-->React App: Success
+React App-->Alice: Success

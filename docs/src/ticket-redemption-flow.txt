@@ -1,0 +1,12 @@
+title Ticket Redemption Flow
+
+Alice->React App:Claim tickets
+React App->Beacon: Sign in
+Beacon-->React App:
+React App->Django App: claim ticket
+Django App->NFT Contract: mint NFT
+NFT Contract-->Django App:
+
+Django App-->React App:OpenTix barcodes
+React App->Alice:OapenTix barcodes
+box right of Django App: If NFT is transferred, opentix barcodes are void

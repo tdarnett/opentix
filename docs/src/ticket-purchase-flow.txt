@@ -1,0 +1,11 @@
+title Ticket Purchase Flow
+
+Alice->React App:Purchase Basket
+React App->Django App: Purchase
+Django App->Django App:Build Invoice
+Django App->(4)Django App: Generate tickets
+space -3
+space -7
+React App<--Django App:Invoice data
+Alice<--React App: Purchase success
+box right of Django App: Note there is no blockchain interaction
