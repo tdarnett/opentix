@@ -41,9 +41,14 @@ class NFT(
     def is_claimed(self, token_id):
         """If the token has been claimed yet"""
         sp.set_type(token_id, sp.TNat)
-        self._check_token_exists(token_id)
+        self.is_defined(token_id)
         sp.result(self.data.token_status[token_id] == NFTStatus.CLAIMED.value)
 
-    def _check_token_exists(self, token_id):
-        """Checks that the given token exists."""
-        sp.verify(token_id < self.data.last_token_id, message="FA2_TOKEN_UNDEFINED")
+
+sp.add_compilation_target(
+    "nft",
+    NFT(
+        administrator=sp.address("tz1ZMPhZxGEdvi4vumphBsXhDBNRggNX6rXH"),
+        metadata=sp.utils.metadata_of_url("ipfs://aaa"),
+    ),
+)
