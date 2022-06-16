@@ -47,3 +47,6 @@ compile_all:
 
 test_all:
 	$(call TEST, nft)
+
+format:
+	python -m black .
