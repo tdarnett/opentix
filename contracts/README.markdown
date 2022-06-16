@@ -1,8 +1,8 @@
 To run contract tests:
 
-1. `cd` into the `/opentix/contracts/contracts/` dir
-2. execute `~/smartpy-cli/SmartPy.sh test ./nft_contract.py ./output`
-
+```bash
+make test_all
+```
 
 helpful links:
 - https://smartpy.io/pdoc/fa2_lib.html
